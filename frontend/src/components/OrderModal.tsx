@@ -64,6 +64,7 @@ export default function OrderModal() {
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-xl font-bold text-white max-sm:text-lg">Place Order</h2>
           <button
+            aria-label="Close Order Modal"
             className="w-9 h-9 flex items-center justify-center border-none rounded-[10px] bg-white/6 text-white/50 cursor-pointer transition-all duration-200 hover:bg-white/10 hover:text-white"
             onClick={closeOrderModal}
           >

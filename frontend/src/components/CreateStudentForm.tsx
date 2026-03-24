@@ -51,6 +51,7 @@ export default function CreateStudentForm() {
             <h2 className="text-xl font-bold text-white max-sm:text-lg">Create Student</h2>
           </div>
           <button
+            aria-label="Close Create Student Modal"
             className="w-9 h-9 flex items-center justify-center border-none rounded-[10px] bg-white/6 text-white/50 cursor-pointer transition-all duration-200 hover:bg-white/10 hover:text-white"
             onClick={closeCreateStudentModal}
           >
