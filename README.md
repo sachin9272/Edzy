@@ -2,6 +2,8 @@
 
 A full-stack canteen digital ordering system prototype, meticulously engineered to fulfill the core evaluation criteria.
 
+![Dashboard Preview](./assets/dashboard.png)
+
 ## 🌟 Alignment with Evaluation Criteria
 
 ### 1. Code Structure and Clarity
