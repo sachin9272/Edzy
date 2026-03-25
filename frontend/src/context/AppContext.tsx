@@ -8,6 +8,7 @@ interface AppState {
   orderModalOpen: boolean;
   selectedSnackId: string | null;
   createStudentModalOpen: boolean;
+  createSnackModalOpen: boolean;
 }
 
 interface AppContextType extends AppState {
@@ -16,6 +17,8 @@ interface AppContextType extends AppState {
   closeOrderModal: () => void;
   openCreateStudentModal: () => void;
   closeCreateStudentModal: () => void;
+  openCreateSnackModal: () => void;
+  closeCreateSnackModal: () => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -27,6 +30,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [orderModalOpen, setOrderModalOpen] = useState(false);
   const [selectedSnackId, setSelectedSnackId] = useState<string | null>(null);
   const [createStudentModalOpen, setCreateStudentModalOpen] = useState(false);
+  const [createSnackModalOpen, setCreateSnackModalOpen] = useState(false);
 
   // Load recent orders from localStorage on mount
   useEffect(() => {
@@ -66,6 +70,14 @@ export function AppProvider({ children }: { children: ReactNode }) {
     setCreateStudentModalOpen(false);
   }, []);
 
+  const openCreateSnackModal = useCallback(() => {
+    setCreateSnackModalOpen(true);
+  }, []);
+
+  const closeCreateSnackModal = useCallback(() => {
+    setCreateSnackModalOpen(false);
+  }, []);
+
   return (
     <AppContext.Provider
       value={{
@@ -73,11 +85,14 @@ export function AppProvider({ children }: { children: ReactNode }) {
         orderModalOpen,
         selectedSnackId,
         createStudentModalOpen,
+        createSnackModalOpen,
         addRecentOrder,
         openOrderModal,
         closeOrderModal,
         openCreateStudentModal,
         closeCreateStudentModal,
+        openCreateSnackModal,
+        closeCreateSnackModal,
       }}
     >
       {children}

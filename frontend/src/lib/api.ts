@@ -1,4 +1,4 @@
-import { Snack, Student, CreateStudentPayload, CreateOrderPayload, Order, StudentDetailResponse } from '@/types';
+import { Snack, Student, CreateStudentPayload, CreateOrderPayload, Order, StudentDetailResponse, CreateSnackPayload } from '@/types';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
@@ -18,6 +18,12 @@ async function fetchJSON<T>(url: string, options?: RequestInit): Promise<T> {
 
 // Snacks
 export const getSnacks = (): Promise<Snack[]> => fetchJSON('/snacks');
+
+export const createSnack = (data: CreateSnackPayload): Promise<Snack> =>
+  fetchJSON('/snacks', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  });
 
 // Students
 export const getStudents = (): Promise<Student[]> => fetchJSON('/students');

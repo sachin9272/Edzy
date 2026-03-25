@@ -21,6 +21,10 @@ export interface Order {
   payableAmount: number;
   createdAt: string;
 }
+export interface CreateSnackPayload {
+  name: string;
+  price: number;
+}
 
 export interface CreateStudentPayload {
   name: string;

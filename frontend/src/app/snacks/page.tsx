@@ -8,7 +8,7 @@ import LoadingSpinner from '@/components/LoadingSpinner';
 import ErrorState from '@/components/ErrorState';
 
 export default function SnacksPage() {
-  const { openOrderModal } = useAppContext();
+  const { openOrderModal, openCreateSnackModal } = useAppContext();
 
   const { data: snacks = [], isLoading, isError, refetch } = useQuery({
     queryKey: ['snacks'],
@@ -20,9 +20,18 @@ export default function SnacksPage() {
 
   return (
     <>
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2 tracking-tight">🍕 Snacks Menu</h1>
-        <p className="text-base text-white/60 m-0">Browse available snacks and place your order</p>
+      <div className="mb-8 flex justify-between items-center max-sm:flex-col max-sm:items-start max-sm:gap-4">
+        <div>
+          <h1 className="text-3xl font-bold mb-2 tracking-tight">🍕 Snacks Menu</h1>
+          <p className="text-base text-white/60 m-0">Browse available snacks and place your order</p>
+        </div>
+        <button
+          onClick={openCreateSnackModal}
+          className="flex items-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/15 text-white rounded-xl font-medium transition-colors border border-white/5"
+        >
+          <span className="text-xl leading-none">+</span>
+          Add Snack
+        </button>
       </div>
 
       {snacks.length === 0 ? (

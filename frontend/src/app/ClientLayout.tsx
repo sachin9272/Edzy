@@ -7,6 +7,7 @@ import { AppProvider } from '@/context/AppContext';
 import Sidebar from '@/components/Sidebar';
 import OrderModal from '@/components/OrderModal';
 import CreateStudentForm from '@/components/CreateStudentForm';
+import CreateSnackForm from '@/components/CreateSnackForm';
 
 export default function ClientLayout({ children }: { children: ReactNode }) {
   return (
@@ -18,6 +19,7 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
         </main>
         <OrderModal />
         <CreateStudentForm />
+        <CreateSnackForm />
         <Toaster
           position="bottom-right"
           toastOptions={{
