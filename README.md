@@ -1,6 +1,6 @@
 # Edzy Canteen Ordering System
 
-A full-stack canteen digital ordering system prototype, meticulously engineered to fulfill the core evaluation criteria.
+A full-stack canteen digital ordering system prototype.
 
 ![Dashboard Preview](./assets/dashboard.png)
 
